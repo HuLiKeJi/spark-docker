@@ -4,8 +4,9 @@ FROM anapsix/alpine-java
 MAINTAINER HuLiKeJi
 
 ENV SPARK_VERSION=2.0.2 \
-    SPARK_HADOOP_VERSION=hadoop2.7 \
-    SPARK_HOME="/opt/spark-${SPARK_VERSION}-bin-${SPARK_HADOOP_VERSION}"
+    SPARK_HADOOP_VERSION=hadoop2.7
+
+ENV SPARK_HOME=/opt/spark-${SPARK_VERSION}-bin-${SPARK_HADOOP_VERSION}
 
 # Install dependencies
 RUN apk update && \
