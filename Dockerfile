@@ -10,7 +10,7 @@ ENV SPARK_VERSION=2.0.2 \
 # Install dependencies
 RUN apk update && \
         apk add ca-certificates wget && \
-        update-ca-certificate
+        update-ca-certificates
 
 RUN wget -q "http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-${SPARK_HADOOP_VERSION}.tgz" -O /opt/spark.tgz && \
     tar xz /opt/spark.tgz -C /opt
