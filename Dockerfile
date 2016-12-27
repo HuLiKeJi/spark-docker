@@ -12,8 +12,8 @@ RUN apk update && \
         apk add ca-certificates wget && \
         update-ca-certificates
 
-RUN wget -q "http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-${SPARK_HADOOP_VERSION}.tgz" -O /opt/spark.tgz && \
-    tar xz /opt/spark.tgz -C /opt
+RUN wget "http://mirror.bit.edu.cn/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-${SPARK_HADOOP_VERSION}.tgz" -O /tmp/spark.tgz && \
+    tar xvfz /tmp/spark.tgz -C /opt
 
 ENV PATH $PATH:${SPARK_HOME}/bin
 
